@@ -454,8 +454,10 @@ h2 {
 }
 .footer-container {
   display: flex;
+  justify-content: space-between;
 }
-.footer-social-links h3 {
+.footer-social-links h3,
+.footer-newsletter h3 {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.1;
@@ -490,6 +492,159 @@ h2 {
   fill: var(--icon-color-hover);
   padding: 12px;
 }
+.footer-newsletter {
+  padding-top: 12px;
+  margin-left: 78px;
+}
+.footer-newsletter-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.footer-newsletter-input {
+  width: 358px;
+  height: 50px;
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding-left: 16px;
+}
+.footer-newsletter-button {
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--button-background-color-hover);
+  color: var(--font-color-4);
+
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.modal-close-button {
+  display: flex;
+  justify-content: end;
+}
+.contact-form-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.contact-form-info {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  border: none;
+  outline: none;
+  width: inherit;
+  margin-left: 12px;
+}
+label {
+  /* border: 0.5px dashed blue; */
+}
+.input,
+.comment {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.input {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 11px 12px;
+}
+.comment {
+  height: 138px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+.comment-textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 100px;
+  outline: none;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+.contact-form-item {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contact-form-item > label {
+  font-size: 12px;
+  line-height: 1.16;
+
+  letter-spacing: 0.01em;
+  color: var(--font-color-3);
+}
+.contact-form-item label:focus-within,
+.input:focus-within {
+  border-color: var(--button-background-color-hover);
+  fill: var(--button-background-color-hover);
+  stroke: var(--button-background-color-hover);
+}
+.statement {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--font-color-3);
+}
+.statement a {
+  font-size: 14px;
+  line-height: 2;
+  text-decoration-line: underline;
+  color: var(--font-color-2);
+}
+.contact-form-button-container {
+  display: flex;
+  justify-content: center;
+}
+.contact-form-button {
+  margin-top: 30px;
+  margin-bottom: 32px;
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--font-color-4);
+
+  text-align: center;
+
+  background: var(--button-background-color-hover);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
 .backdrop {
   position: fixed;
   z-index: 3;
@@ -507,12 +662,12 @@ h2 {
   position: absolute;
   left: 50%;
   top: 50%;
-  display: flex;
-  justify-content: end;
   transform: translate(-50%, -50%) scale(1);
 
+  display: block;
+
   width: 528px;
-  height: 581px;
+  /* height: 581px; */
   padding: 8px;
   background-color: var(--background-color-1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -523,9 +678,10 @@ h2 {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal > button {
+.modal-close-button button {
   width: 30px;
   height: 30px;
+
   display: flex;
   justify-content: center;
   align-items: center;
