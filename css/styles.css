@@ -612,7 +612,10 @@ label {
   stroke: var(--button-background-color-hover);
 }
 .statement {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   margin-top: 20px;
   font-size: 14px;
   line-height: 2;
@@ -623,6 +626,9 @@ label {
   line-height: 2;
   text-decoration-line: underline;
   color: var(--font-color-2);
+}
+.statement input {
+  margin: 0;
 }
 .contact-form-button-container {
   display: flex;
