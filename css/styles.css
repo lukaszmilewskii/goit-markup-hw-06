@@ -81,12 +81,10 @@ h2 {
   gap: 46px;
   margin-left: 93px;
 }
-.link-underline,
-.link-underline-hover {
+.link-underline {
   position: relative;
 }
-.link-underline::after,
-.link-underline-hover:hover::after {
+.link-underline::after {
   content: '';
   position: absolute;
   display: block;
@@ -174,7 +172,7 @@ h2 {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 50px 0;
+  padding-top: 50px;
 }
 .product-item {
   /* border: 1px solid #eeeeee;
@@ -528,8 +526,21 @@ h2 {
   align-items: center;
 }
 .modal-close-button {
+  width: 30px;
+  height: 30px;
+
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-left: 482px;
+}
+
+.modal-close-button svg {
+  stroke: var(--font-color-1);
+  fill: var(--font-color-1);
 }
 .contact-form-container {
   padding-left: 40px;
@@ -577,8 +588,6 @@ label {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
 }
 .comment-textarea {
   border: none;
@@ -591,14 +600,14 @@ label {
   line-height: 1.16;
   letter-spacing: 0.01em;
 
-  color: rgba(117, 117, 117, 0.5);
+  padding: 0 0;
 }
 .contact-form-item {
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
 }
-.contact-form-item > label {
+.contact-form-item > p {
   font-size: 12px;
   line-height: 1.16;
 
@@ -606,36 +615,57 @@ label {
   color: var(--font-color-3);
 }
 .contact-form-item label:focus-within,
-.input:focus-within {
+.input:focus-within,
+.contact-form-item label:hover {
   border-color: var(--button-background-color-hover);
   fill: var(--button-background-color-hover);
   stroke: var(--button-background-color-hover);
 }
 .statement {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
+  margin-top: 10px;
+
   font-size: 14px;
   line-height: 2;
   color: var(--font-color-3);
+
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
 }
 .statement a {
   font-size: 14px;
   line-height: 2;
   text-decoration-line: underline;
   color: var(--font-color-2);
+
+  position: relative;
+  display: inline-flex;
 }
-.statement input {
+.checkbox-input {
   margin: 0;
+  clip: rect(1px 1px 1px 1px);
 }
-.contact-form-button-container {
-  display: flex;
-  justify-content: center;
+.checkbox-statement-label {
+  position: absolute;
+  left: 51px;
+  bottom: 129px;
+  width: 16px;
+  height: 15px;
+  display: block;
+
+  border: 2px solid black;
+  background-color: var(--background-color-1);
+  border-radius: 2px;
+}
+.checkbox-input:checked + .checkbox-statement-label {
+  background-image: url(/goit-markup-hw-06/images/check.svg);
+  background-color: var(--button-background-color-hover);
+  border-color: var(--button-background-color-hover);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-position: 50%;
 }
 .contact-form-button {
-  margin-top: 30px;
+  margin-top: 22px;
   margin-bottom: 32px;
   width: 200px;
   height: 50px;
@@ -646,6 +676,8 @@ label {
   color: var(--font-color-4);
 
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
   background: var(--button-background-color-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -683,20 +715,6 @@ label {
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-close-button button {
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color-1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-}
-.modal > button > svg {
-  fill: var(--font-color-1);
 }
 .is-hidden {
   visibility: hidden;
